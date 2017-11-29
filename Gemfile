@@ -12,8 +12,13 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'rails', '~> 5.1.4'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'bootstrap-sass', '~> 3.3.7'
+# bootstrap themes: https://bootswatch.com/, we need to fork a new branch to disable google font.
+gem 'bootswatch-rails', git: "git@github.com:ccokme/bootswatch-rails.git", branch: 'disable_google_font'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -47,6 +52,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.5', require: false
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

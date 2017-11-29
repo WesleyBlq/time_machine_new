@@ -1,0 +1,1 @@
+console.log("this is m/mobile js file")

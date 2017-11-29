@@ -1,5 +1,10 @@
 <% content_for :template do %>
   <h1>this is mobile layout</h1>
+  <div class="container">
+    <div class="row ">
+      <%= yield %>    
+    </div>
+  </div>
 <% end %>
 
 <%= render file: 'layouts/application' %>

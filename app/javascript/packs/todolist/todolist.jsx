@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
 const Hello = props => (
-    <div>Hello {props.name}!</div>
+    <div>Hello {props.name}!, this is a todolist component in directory of todolist</div>
 )
 
 Hello.defaultProps = {
@@ -38,7 +38,7 @@ class Welcome extends React.Component {
 
     render() {
         return (
-           <h1>Hello, {this.props.name}</h1> 
+           <h1>Hello {this.props.name}!, this is a todolist component in directory of todolist</h1> 
         );
     }
 }

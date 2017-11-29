@@ -10,8 +10,9 @@
 
   <body>
     <% if content_for? :template %>
-        <%= yield :template %>
+      <%= yield :template %>
+    <% else %>
+      <%= yield %>
     <% end %>
-    <%= yield %>
   </body>
 </html>
