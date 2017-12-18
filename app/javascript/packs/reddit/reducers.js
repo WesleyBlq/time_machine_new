@@ -32,7 +32,7 @@ function posts(state = {isFetching: false,didInvalidate: false,items: [],},actio
         didInvalidate: false,
         items: action.posts,
         lastUpdated: action.receivedAt,
-        test: false,
+        // test: false,
       })
     default:
       return state
