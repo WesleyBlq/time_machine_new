@@ -64,15 +64,20 @@ function tick() {
     // <NumberList numbers={numbers} />
     const element = (
         <div>
-                    
             <Welcome name={"Wesley"} />
             <h2>It is {new Date().toLocaleTimeString()}.</h2>
+            <form >
+            <input  />
+              <button type="sublimt">
+                Add Todo
+              </button>
+            </form>
         </div>
     );
 
     ReactDOM.render(
         element,
-        document.getElementById('root')
+        document.getElementById('foot')
     );
 }
 
