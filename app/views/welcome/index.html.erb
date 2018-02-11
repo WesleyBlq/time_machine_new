@@ -2,10 +2,16 @@
 
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
-<form onsubmit="return false" >
-<div id="root"></div>
-<div id="foot"></div>
 
 <%#= javascript_pack_tag "todolist/index" %>
-<%= javascript_pack_tag "reddit/index" %>
+<%#= javascript_pack_tag "reddit/index" %>
+<%#= javascript_pack_tag "react_router/index" %>
+<%#= react_component('react_router/modal_gallery',{ prerender: true }) %>
 <%#= javascript_pack_tag "hello_react" %>
+
+<%#= react_component("HelloWorld", { greeting: "Hello", prerender: true },) %>
+<%#= react_component("welcome/Hello_World",  { greeting: "Hello", prerender: true },) %>
+<%#= react_component("react_router/modal_gallery",  { location: "window.location", prerender: true },) %>
+<%# <div id="root" /> %>
+
+<%= react_component("todolist/index",  {  prerender: true },) %>

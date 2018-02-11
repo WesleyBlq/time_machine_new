@@ -1,4 +1,7 @@
 <h1>this is mobile welcome view.</h1>
 <div id="root" class="mobile_container"></div>
+
 <%#= javascript_pack_tag "m/welcome/index" %>
-<%= javascript_pack_tag "react_router/index" %>
+<%#= javascript_pack_tag "react_router/index" %>
+<%#= javascript_pack_tag "todolist/index" %>
+<%= react_component("HelloWorld", { greeting: "Hello" }) %>

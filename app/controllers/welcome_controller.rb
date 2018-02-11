@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
-  def index
-  end
+	per_request_react_rails_prerenderer
+
+	def index
+	end
 end
