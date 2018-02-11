@@ -40,8 +40,8 @@ class AsyncApp extends Component {
   }
   
   render() {
-    console.log("test")
-    console.log(this.props)
+    // console.log("test")
+    // console.log(this.props)
     const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props
     return (
       <div>
