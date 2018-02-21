@@ -1,8 +1,10 @@
 import React from 'react';
-import { Calendar, Modal } from 'antd';
+import { Calendar, Modal, LocaleProvider } from 'antd';
 import moment from 'moment';
-// import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 import { imagePath } from 'rwr-view-helpers';
+
 
 class CalendarPage extends React.Component {
 
@@ -10,7 +12,6 @@ class CalendarPage extends React.Component {
         super(props);
 
         this.rest_day = moment(this.props.rest_date);
-
         this.select_day = this.rest_day;
         this.state = {
             visible: false,
@@ -19,16 +20,18 @@ class CalendarPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <Calendar dateCellRender={this.dateCellRender.bind(this)}
-                    onSelect={this.onSelect.bind(this)}
-                />
-                <Modal visible={this.state.visible}
-                    onOk={this.handleOk.bind(this)} onCancel={this.handleCancel.bind(this)}>
-                    <p>设定今天为休息日？</p>
-                    <p>{this.select_day.format()}</p>
-                </Modal>
-            </div>
+            <LocaleProvider locale={zhCN}>
+                <div>
+                    <Calendar dateCellRender={this.dateCellRender.bind(this)}
+                        onSelect={this.onSelect.bind(this)}
+                    />
+                    <Modal visible={this.state.visible}
+                        onOk={this.handleOk.bind(this)} onCancel={this.handleCancel.bind(this)}>
+                        <p>设定今天为休息日？</p>
+                        <p>{this.select_day.format()}</p>
+                    </Modal>
+                </div>
+            </LocaleProvider>
         )
     }
 
@@ -67,7 +70,7 @@ class CalendarPage extends React.Component {
         if (date_moment.isBefore(this.rest_day)) {
             count += -1;
         }
-        console.log(count % 3);
+        // console.log(count % 3);
         // console.log(date_moment);
         // console.log(this.rest_day);
         switch (count % 3) {
@@ -103,7 +106,7 @@ class RestCell extends React.Component {
     render() {
         return (
             <div>
-                {/* <img src={imagePath('rest.png')} style={{ width: '240%', margin: '-20px 0 0 -20px', margin_top: '-20px' }} /> */}
+                <img src={imagePath('rest.png')} style={{ width: '240%', margin: '-20px 0 0 -20px', margin_top: '-20px' }} />
                 <p>休息</p>
             </div>
         )
@@ -114,7 +117,7 @@ class DayCell extends React.Component {
     render() {
         return (
             <div>
-                {/* <img src={imagePath('day_work.png')} style={{ width: '120%' }} /> */}
+                <img src={imagePath('day_work.png')} style={{ width: '120%' }} />
                 <p>白班</p>
             </div>
         )
@@ -125,7 +128,7 @@ class NightCell extends React.Component {
     render() {
         return (
             <div>
-                {/* <img src={imagePath('night_work.png')} style={{ width: '100%' }} /> */}
+                <img src={imagePath('night_work.png')} style={{ width: '100%' }} />
                 <p>夜班</p>
             </div>
         )

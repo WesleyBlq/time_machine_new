@@ -29,6 +29,9 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'webpacker'
 gem 'react-rails'
+
+gem 'rwr-view_helpers'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
