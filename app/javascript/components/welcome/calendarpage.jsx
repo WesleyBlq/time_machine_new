@@ -106,8 +106,8 @@ class RestCell extends React.Component {
     render() {
         return (
             <div>
-                <img src={imagePath('rest.png')} style={{ width: '240%', margin: '-20px 0 0 -20px', margin_top: '-20px' }} />
-                <p>休息</p>
+                <img src={imagePath('rest.png')} style={cell_image} />
+                <p style={cell_content} >休</p>
             </div>
         )
     }
@@ -117,8 +117,8 @@ class DayCell extends React.Component {
     render() {
         return (
             <div>
-                <img src={imagePath('day_work.png')} style={{ width: '120%' }} />
-                <p>白班</p>
+                <img src={imagePath('day_work.png')} style={cell_image} />
+                <p style={cell_content}>白</p>
             </div>
         )
     }
@@ -128,11 +128,24 @@ class NightCell extends React.Component {
     render() {
         return (
             <div>
-                <img src={imagePath('night_work.png')} style={{ width: '100%' }} />
-                <p>夜班</p>
+                <img src={imagePath('night_work.png')} style={cell_image} />
+                <p style={cell_content} >夜</p>
             </div>
         )
     }
 }
+
+const cell_image = {
+    width: "100%",
+    marginTop: "10px",
+}
+
+const cell_content = {
+    textAlign: "center",
+    // top: "50%",
+    paddingTop: "10px",
+    overflow: "hidden",
+}
+
 
 export default CalendarPage;
