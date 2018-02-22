@@ -3,14 +3,16 @@ import { Calendar, Modal, LocaleProvider } from 'antd';
 import moment from 'moment';
 import 'antd/dist/antd.css';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
-import { imagePath } from 'rwr-view-helpers';
+
+import day_work_png from './images/day_work.png';
+import night_work_png from './images/night_work.png';
+import rest_png from './images/rest.png';
 
 
 class CalendarPage extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.rest_day = moment(this.props.rest_date);
         this.select_day = this.rest_day;
         this.state = {
@@ -28,6 +30,7 @@ class CalendarPage extends React.Component {
                     <Modal visible={this.state.visible}
                         onOk={this.handleOk.bind(this)} onCancel={this.handleCancel.bind(this)}>
                         <p>设定今天为休息日？</p>
+                        <p>{"<%= m_root_path %>"}</p>
                         <p>{this.select_day.format()}</p>
                     </Modal>
                 </div>
@@ -88,9 +91,7 @@ class CalendarPage extends React.Component {
         }
 
         return (
-            <div>
-                {rest_type}
-            </div>
+            <div>{rest_type}</div>
         )
     }
 
@@ -106,7 +107,7 @@ class RestCell extends React.Component {
     render() {
         return (
             <div>
-                <img src={imagePath('rest.png')} style={cell_image} />
+                <img src={rest_png} style={cell_image} />
                 <p style={cell_content} >休</p>
             </div>
         )
@@ -117,7 +118,7 @@ class DayCell extends React.Component {
     render() {
         return (
             <div>
-                <img src={imagePath('day_work.png')} style={cell_image} />
+                <img src={day_work_png} style={cell_image} />
                 <p style={cell_content}>白</p>
             </div>
         )
@@ -128,7 +129,7 @@ class NightCell extends React.Component {
     render() {
         return (
             <div>
-                <img src={imagePath('night_work.png')} style={cell_image} />
+                <img src={night_work_png} style={cell_image} />
                 <p style={cell_content} >夜</p>
             </div>
         )

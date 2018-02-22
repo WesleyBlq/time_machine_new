@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Avatar from './avatar'
 import ItemList, {SportItem, ExamItem, BlogItem, CalendarItem,} from './itemlist'
 import SportPage from './sportpage'
-import CalendarPage from './calendarpage'
+import CalendarPage from './calendar/calendarpage'
 import {
   HashRouter as Router,
   Switch,
