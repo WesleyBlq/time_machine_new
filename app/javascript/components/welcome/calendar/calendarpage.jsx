@@ -18,6 +18,7 @@ class CalendarPage extends React.Component {
     constructor(props) {
         super(props);
         this.rest_day = moment(this.props.rest_date);
+
         this.select_day = this.rest_day;
         this.state = {
             visible: false,
@@ -34,7 +35,6 @@ class CalendarPage extends React.Component {
                     <Modal visible={this.state.visible}
                         onOk={this.handleOk.bind(this)} onCancel={this.handleCancel.bind(this)}>
                         <p>设定今天为休息日？</p>
-                        <p>{"<%= m_root_path %>"}</p>
                         <p>{this.select_day.format()}</p>
                     </Modal>
                 </div>
@@ -49,19 +49,11 @@ class CalendarPage extends React.Component {
         this.select_day = this.rest_day;
         var json_data = { "rest_date": this.rest_day.format() };
 
-        // fetch(this.props.data_path, {
-        //     method: "post",
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(json_data),
-        // });
-
         console.log(this.props.data_path);
 
-        axios.post(this.props.data_path, 
-            JSON.stringify(json_data)
-        ).then((response) => {
+        axios.post(this.props.data_path, { 
+            "rest_date": this.rest_day.format() 
+        }).then((response) => {
             console.log(response.data)
         })
 
@@ -86,9 +78,11 @@ class CalendarPage extends React.Component {
         if (date_moment.isBefore(this.rest_day)) {
             count += -1;
         }
+        // console.log("####");
         // console.log(count % 3);
         // console.log(date_moment);
         // console.log(this.rest_day);
+
         switch (count % 3) {
             case 0:
                 rest_type = (<RestCell />);

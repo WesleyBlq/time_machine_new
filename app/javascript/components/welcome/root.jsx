@@ -12,11 +12,9 @@ import {
 
 class HomePage extends Component {
 
-	
-
 	render() { 
 		const CalendarComponent = ({match}) => {
-			return <CalendarPage data_path="/m/rest_time" />
+			return <CalendarPage data_path="/m/rest_time" rest_date={this.props.rest_date} />
 		}
 		return ( 
 			<div>
@@ -37,10 +35,13 @@ class HomePage extends Component {
 
 export default class Root extends Component {
   render() {
+	const HomeComponent = ({match}) => {
+		return <HomePage rest_date={this.props.rest_date}></HomePage>
+	}
     return (
-      <Router >
-        <Route component={HomePage}></Route>
-      </Router>
+		<Router >
+			<Route component={HomeComponent}></Route>
+		</Router>
     )
   }
 }
