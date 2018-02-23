@@ -8,15 +8,13 @@ import App from './components/App'
 let store = createStore(todoApp)
 
 class Todolist extends React.Component {  
-  render() { 
-    return (
-      <Provider store={store}>
-        <App />
-      </Provider>
-      
-        
-    )
-  }
+	render() { 
+		return (
+			<Provider store={store}>
+				<App />
+			</Provider>
+		)
+	}
 }
 
 export default Todolist;

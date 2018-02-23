@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
 import Avatar from './avatar'
-import ItemList, {SportItem, ExamItem, BlogItem, CalendarItem,} from './itemlist'
+import ItemList, { SportItem, ExamItem, BlogItem, CalendarItem, } from './itemlist'
 import SportPage from './sportpage'
-import CalendarPage from './calendar/calendarpage'
+
+// import CalendarPage from './calendar/calendarpage'
+import calendar from './calendar/calendar_reducer'
+import CalendarContainer from './calendar/calendar_container'
+
 import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  Link
+	HashRouter as Router,
+	Switch,
+	Route,
+	Link
 } from 'react-router-dom'
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import { combineReducers } from 'redux'
+
+
 
 class HomePage extends Component {
 
-	render() { 
-		const CalendarComponent = ({match}) => {
-			return <CalendarPage data_path="/m/rest_time" rest_date={this.props.rest_date} />
-		}
-		return ( 
+	render() {
+		
+		return (
 			<div>
 				<Avatar name="Wesley" />
 				<Switch>
@@ -24,24 +32,34 @@ class HomePage extends Component {
 					<Route path='/sport' component={SportPage} />
 					<Route path='/blog' component={BlogItem} />
 					<Route path='/exam' component={ExamItem} />
-					<Route path='/calendar' component={CalendarComponent} />
+					<Route path='/calendar' component={CalendarContainer} />
 				</Switch>
 			</div>
 		);
 	}
 }
 
-
-
 export default class Root extends Component {
-  render() {
-	const HomeComponent = ({match}) => {
-		return <HomePage rest_date={this.props.rest_date}></HomePage>
+	
+	render() {
+		const homeApp = combineReducers({
+			calendar,
+		});
+
+		const initState = {
+			calendar: { 
+				time: this.props.rest_date,
+				data_path: "/m/rest_time",
+			},
+		};
+		let store = createStore(homeApp, initState);
+
+		return (
+			<Provider store={store}>
+				<Router >
+					<Route component={HomePage}></Route>
+				</Router>
+			</Provider>
+		)
 	}
-    return (
-		<Router >
-			<Route component={HomeComponent}></Route>
-		</Router>
-    )
-  }
 }

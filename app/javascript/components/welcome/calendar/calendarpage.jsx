@@ -17,15 +17,14 @@ class CalendarPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.rest_day = moment(this.props.rest_date);
-
-        this.select_day = this.rest_day;
+        this.select_day = moment();
         this.state = {
             visible: false,
         };
     }
 
     render() {
+        this.rest_day = moment(this.props.rest_date);
         return (
             <LocaleProvider locale={zhCN}>
                 <div>
@@ -43,20 +42,14 @@ class CalendarPage extends React.Component {
     }
 
     handleOk() {
-        // console.log("clicked ok");
-
-        this.rest_day = this.select_day.subtract(2, "hours");
-        this.select_day = this.rest_day;
-        var json_data = { "rest_date": this.rest_day.format() };
-
-        console.log(this.props.data_path);
+        this.select_day = this.select_day.subtract(2, "hours");
+        var json_data = { "rest_date": this.select_day.format() };
 
         axios.post(this.props.data_path, { 
             "rest_date": this.rest_day.format() 
         }).then((response) => {
-            console.log(response.data)
+            this.props.change_success(this.select_day);
         })
-
 
         this.setState({
             visible: false,
@@ -64,7 +57,6 @@ class CalendarPage extends React.Component {
     }
 
     handleCancel() {
-        console.log("clicked cancel");
         this.setState({
             visible: false,
         });
@@ -107,6 +99,7 @@ class CalendarPage extends React.Component {
         this.setState({
             visible: true,
         });
+        
     }
 };
 
