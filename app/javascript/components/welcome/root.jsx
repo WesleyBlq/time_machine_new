@@ -11,22 +11,29 @@ import {
 } from 'react-router-dom'
 
 class HomePage extends Component {
-  
-  render() { 
-    return ( 
-      	<div>
-        	<Avatar name="Wesley" />
-        	<Switch>
-				<Route exact path="/" component={ItemList} />
-				<Route path='/sport' component={SportPage} />
-				<Route path='/blog' component={BlogItem} />
-				<Route path='/exam' component={ExamItem} />
-				<Route path='/calendar' component={CalendarPage} />
-			</Switch>
-      	</div>
-    );
-  }
+
+	
+
+	render() { 
+		const CalendarComponent = ({match}) => {
+			return <CalendarPage data_path="/m/rest_time" />
+		}
+		return ( 
+			<div>
+				<Avatar name="Wesley" />
+				<Switch>
+					<Route exact path="/" component={ItemList} />
+					<Route path='/sport' component={SportPage} />
+					<Route path='/blog' component={BlogItem} />
+					<Route path='/exam' component={ExamItem} />
+					<Route path='/calendar' component={CalendarComponent} />
+				</Switch>
+			</div>
+		);
+	}
 }
+
+
 
 export default class Root extends Component {
   render() {

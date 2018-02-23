@@ -11,6 +11,5 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require rwr_view_helpers
 //= require welcome
 

@@ -1,6 +1,10 @@
 import React from 'react';
 import { Calendar, Modal, LocaleProvider } from 'antd';
 import moment from 'moment';
+// import axios from 'axios';
+import axios from 'axios-on-rails'
+// import $ from 'jquery';
+
 import 'antd/dist/antd.css';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 
@@ -39,19 +43,28 @@ class CalendarPage extends React.Component {
     }
 
     handleOk() {
-        console.log("clicked ok");
+        // console.log("clicked ok");
 
         this.rest_day = this.select_day.subtract(2, "hours");
         this.select_day = this.rest_day;
         var json_data = { "rest_date": this.rest_day.format() };
 
-        fetch(this.props.data_path, {
-            method: "post",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(json_data),
-        });
+        // fetch(this.props.data_path, {
+        //     method: "post",
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(json_data),
+        // });
+
+        console.log(this.props.data_path);
+
+        axios.post(this.props.data_path, 
+            JSON.stringify(json_data)
+        ).then((response) => {
+            console.log(response.data)
+        })
+
 
         this.setState({
             visible: false,
@@ -143,7 +156,6 @@ const cell_image = {
 
 const cell_content = {
     textAlign: "center",
-    // top: "50%",
     paddingTop: "10px",
     overflow: "hidden",
 }

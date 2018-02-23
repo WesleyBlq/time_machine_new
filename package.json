@@ -4,10 +4,13 @@
   "dependencies": {
     "@rails/webpacker": "^3.2.2",
     "antd": "^3.2.1",
+    "axios": "^0.18.0",
+    "axios-on-rails": "^0.0.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "coffeescript": "1.12.7",
     "cross-fetch": "^1.1.1",
+    "jquery": "^3.3.1",
     "moment": "^2.20.1",
     "postcss-smart-import": "^0.7.6",
     "prop-types": "^15.6.0",
@@ -20,7 +23,7 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "rwr-view-helpers": "^0.2.0"
+    "webpack": "^3.11.0"
   },
   "devDependencies": {
     "autoprefixer": "^8.0.0",
