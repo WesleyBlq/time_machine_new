@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 		post 'rest_time' => 'welcome#rest_time'
 	end
 
+	namespace :wx do
+		root 'welcome#index'
+		get 'login' => 'welcome#index'
+	end
+
 
   	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   	root to: "welcome#index"

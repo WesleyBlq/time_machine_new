@@ -251,6 +251,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.7)
   bootswatch-rails!
   byebug
+  execjs
   font-awesome-rails
   guard
   guard-livereload (~> 2.5)

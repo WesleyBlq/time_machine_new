@@ -22,3 +22,9 @@
 /node_modules
 /.vscode/*
 .DS_Store
+id_rsa
+/mysql-data/*
+/log/
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key

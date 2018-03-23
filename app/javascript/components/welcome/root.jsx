@@ -3,7 +3,6 @@ import Avatar from './avatar'
 import ItemList, { SportItem, ExamItem, BlogItem, CalendarItem, } from './itemlist'
 import SportPage from './sportpage'
 
-// import CalendarPage from './calendar/calendarpage'
 import calendar from './calendar/calendar_reducer'
 import CalendarContainer from './calendar/calendar_container'
 
