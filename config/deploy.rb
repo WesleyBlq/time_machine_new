@@ -6,7 +6,7 @@ set :deploy_to, "/www/time_machine"
 # set :deploy_to, "/disk1/www/family"
 
 # need to set the user 'deploy' ssh key
-set :repo_url, 'git@github.com:taotaochanghe/Time-Machine.git'
+set :repo_url, 'git@github.com:taotaochanghe/time_machine_new.git'
 set :scm, :git
 # set :scm_username, "buildsystem"
 # set :scm_passphrase, "iambuildmachine"
