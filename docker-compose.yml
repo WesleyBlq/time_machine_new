@@ -7,23 +7,26 @@ db:
     - ./log/mysql:/var/log/mysql/
   ports:
     - "3306:3306"
-webpacker:
-  build: .
-  command:  bash -c "rm -f tmp/cache/webpacker/.last-compilation-digest-development && bin/webpack-dev-server"
-  volumes:
-    - .:/app
-  ports:
-    - "3035:3035"
+# webpacker:
+#   build: .
+#   command:  bash -c "rm -f tmp/cache/webpacker/.last-compilation-digest-development && bin/webpack-dev-server"
+#   volumes:
+#     - .:/app
+#   ports:
+#     - "3035:3035"
 web:
   build: .
-  command: bundle exec rails s -p 5001 -b '0.0.0.0'
+  # command: bundle exec rails s -p 5001 -b '0.0.0.0'
+  command: bundle exec unicorn_rails -E production -p 8081 -c config/unicorn.rb -D
   volumes:
     - .:/app
     # - ~/.ssh/id_rsa:/root/.ssh/id_rsa
   environment:
-    - DOCKERIZED=true
+    - RAILS_ENV=production
+    - RACK_ENV=RAILS_ENV=production
+    - NODE_ENV=production
   ports:
     - "5001:5001"
   links:
     - db
-    - webpacker
+    # - webpacker
