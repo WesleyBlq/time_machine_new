@@ -11,9 +11,9 @@ set :scm, :git
 # set :scm_username, "buildsystem"
 # set :scm_passphrase, "iambuildmachine"
 set :branch, ENV['BRANCH'] || "master"
-# set :default_env, {
-#   'BUNDLE_PATH' => "/home/ubuntu/.rvm/gems/ruby-2.2.5/bin/bundle"
-# }
+set :default_env, {
+  'RAILS_MASTER_KEY' => "rake secret"
+}
 
 # set :default_env, {
 #   'PATH' => "/home/ubuntu/.rvm/rubies/ruby-2.2.4/bin:/home/ubuntu/.rvm/gems/ruby-2.2.4@ubuntu/bin/bundle:$PATH",
