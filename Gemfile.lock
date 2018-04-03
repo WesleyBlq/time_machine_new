@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:ccokme/bootswatch-rails.git
+  revision: 16ee8fece6a22f03ca93be0fe60e8c87b5fab752
+  branch: disable_google_font
+  specs:
+    bootswatch-rails (3.3.5)
+      railties (>= 3.1)
+
 GEM
   remote: https://ruby.taobao.org/
   specs:
@@ -261,6 +269,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.7)
+  bootswatch-rails!
   bundler
   byebug
   capistrano (= 3.4.0)
@@ -288,4 +297,4 @@ DEPENDENCIES
   weui-rails
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
