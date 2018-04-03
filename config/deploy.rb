@@ -12,7 +12,7 @@ set :scm, :git
 # set :scm_passphrase, "iambuildmachine"
 set :branch, ENV['BRANCH'] || "master"
 set :default_env, {
-  'RAILS_MASTER_KEY' => "rake secret"
+  'RAILS_MASTER_KEY' => "edd40974a43dfede7401c03167c1a7ce544c39d6b083f3074f0a627007bc1639e1423e6b6fa94b088360fa48e70471f5bfb00b13993a0fd9f1c400fa201ec63d"
 }
 
 # set :default_env, {
