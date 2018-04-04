@@ -33,6 +33,6 @@ module NewTimeMachine
         g.stylesheets     false
         g.javascripts     false
     end
-    config.require_master_key false
+    
   end
 end

@@ -11,9 +11,9 @@ set :scm, :git
 # set :scm_username, "buildsystem"
 # set :scm_passphrase, "iambuildmachine"
 set :branch, ENV['BRANCH'] || "master"
-# set :default_env, {
-#   'RAILS_MASTER_KEY' => "edd40974a43dfede7401c03167c1a7ce544c39d6b083f3074f0a627007bc1639e1423e6b6fa94b088360fa48e70471f5bfb00b13993a0fd9f1c400fa201ec63d"
-# }
+set :default_env, {
+  'RAILS_MASTER_KEY' => "12c0ac93620582818f8462542d4c3164"
+}
 
 # set :default_env, {
 #   'PATH' => "/home/ubuntu/.rvm/rubies/ruby-2.2.4/bin:/home/ubuntu/.rvm/gems/ruby-2.2.4@ubuntu/bin/bundle:$PATH",
