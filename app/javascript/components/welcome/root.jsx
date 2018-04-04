@@ -5,6 +5,7 @@ import SportPage from './sportpage'
 
 import calendar from './calendar/calendar_reducer'
 import CalendarContainer from './calendar/calendar_container'
+import BlogPage from "./blog/blogpage";
 
 import {
 	HashRouter as Router,
@@ -29,7 +30,7 @@ class HomePage extends Component {
 				<Switch>
 					<Route exact path="/" component={ItemList} />
 					<Route path='/sport' component={SportPage} />
-					<Route path='/blog' component={BlogItem} />
+					<Route path='/blog' component={BlogPage} />
 					<Route path='/exam' component={ExamItem} />
 					<Route path='/calendar' component={CalendarContainer} />
 				</Switch>
