@@ -12,7 +12,8 @@ set :scm, :git
 # set :scm_passphrase, "iambuildmachine"
 set :branch, ENV['BRANCH'] || "master"
 set :default_env, {
-  'RAILS_MASTER_KEY' => "12c0ac93620582818f8462542d4c3164"
+  'RAILS_MASTER_KEY' => "12c0ac93620582818f8462542d4c3164",
+  'NODE_ENV' => "production"
 }
 
 # set :default_env, {
