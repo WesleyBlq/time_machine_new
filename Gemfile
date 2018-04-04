@@ -67,7 +67,7 @@ group :development do
 
   gem 'capistrano',  '3.4.0'
   # gem 'capistrano-passenger'
-  gem 'rvm-capistrano'
+  gem 'capistrano-rvm'
   gem 'capistrano-rails', '1.1.3'
   gem 'capistrano3-unicorn' # https://github.com/tablexi/capistrano3-unicorn
 

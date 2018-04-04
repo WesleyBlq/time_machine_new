@@ -61,6 +61,8 @@ set :log_level, :debug
 set :unicorn_config_path, "config/unicorn.rb"
 # set :unicorn_options, "-E #{fetch(:rails_env)} -D"
 
+# set :rvm1_map_bins, %w{rake gem bundle ruby}
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
