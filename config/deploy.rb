@@ -16,24 +16,7 @@ set :default_env, {
   'NODE_ENV' => "production"
 }
 
-# set :default_env, {
-#   'PATH' => "/home/ubuntu/.rvm/rubies/ruby-2.2.4/bin:/home/ubuntu/.rvm/gems/ruby-2.2.4@ubuntu/bin/bundle:$PATH",
-#   'RUBY_VERSION' => 'ruby 2.2.4',
-#   'GEM_HOME'     => '/home/ubuntu/.rvm/rubies/ruby-2.2.4/bin/gem',
-#   'GEM_PATH'     => '/home/ubuntu/.rvm/rubies/ruby-2.2.4/bin/gem',
-#   'BUNDLE_PATH'  => '/home/ubuntu/.rvm/gems/ruby-2.2.4@ubuntu/bin/bundle'  # If you are using bundler.
-# }
 
-# setup rbenv.
-# set :rbenv_type, :system
-# set :rbenv_ruby, '2.2.4'
-# set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-# set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-# set :rvm1_map_bins, %w{rake gem bundle ruby}
-
-# set :rvm_type, :user
-# set :rvm_ruby_string, '2.2.4@ubuntu'
-# set :rvm_autolibs_flag, "read-only"
 set :keep_releases, 5
 
 set :rails_env, ENV['RAILS_ENV'] || ENV['rails_env']
