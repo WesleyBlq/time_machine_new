@@ -43,11 +43,11 @@ class CalendarPage extends React.Component {
 
     handleOk() {
         this.select_day = this.select_day.subtract(2, "hours");
+
         var json_data = { "rest_date": this.select_day.format() };
 
-        axios.post(this.props.data_path, { 
-            "rest_date": this.rest_day.format() 
-        }).then((response) => {
+        axios.post(this.props.data_path, json_data
+        ).then((response) => {
             this.props.change_success(this.select_day);
         })
 

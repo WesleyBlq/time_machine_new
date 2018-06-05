@@ -14,8 +14,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		change_success: (new_time) => {
-            console.log("enter change success");
-            console.log(new_time);
 			dispatch(toggleNewTime(new_time))
 		}
 	}

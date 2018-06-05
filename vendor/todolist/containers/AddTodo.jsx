@@ -10,7 +10,6 @@ class AddTodo extends React.Component {
 
     submit_event(e) {
         e.preventDefault()
-        console.log(e)
         if (!this.input.value.trim()) {
             return
         }

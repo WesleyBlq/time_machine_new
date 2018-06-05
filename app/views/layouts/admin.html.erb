@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>后台管理系统</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <% if content_for? :head_template %>
+      <%= yield :head_template %>
+    <% else %>
+      <%= stylesheet_link_tag    'application', media: 'all' %>
+    <% end %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
+  </head>
+
+  <body>
+    <% if content_for? :template %>
+      <%= yield :template %>
+    <% else %>
+      <%= yield %>
+    <% end %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
