@@ -10,17 +10,23 @@
     <% else %>
       <%= stylesheet_link_tag    'application', media: 'all' %>
     <% end %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
   </head>
 
+
   <body>
-    <% if content_for? :template %>
-      <%= yield :template %>
-    <% else %>
-      <%= yield %>
-    <% end %>
-    <%= render 'layouts/footer' %>
+    <div id="wrapper">
+      <%= render 'layouts/admin_header' %>
+      <%= render 'layouts/admin_sider' %>
+    
+      <% if content_for? :template %>
+        <%= yield :template %>
+      <% else %>
+        <%= yield %>
+      <% end %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_pack_tag 'application' %>
 </html>

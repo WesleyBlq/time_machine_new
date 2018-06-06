@@ -1,0 +1,37 @@
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">
+                    仪表盘 <small>数据统计</small>
+                </h1>
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li class="active">Data</li>
+                </ul>
+            </div>
+        </div>
+
+        <table data-toggle="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @tests.each do |t| %>
+                    <tr>
+                        <td><%= t.No %></td>
+                        <td><%= t.name %></td>
+                        <td><%= t.description %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <%= will_paginate @tests %>
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>

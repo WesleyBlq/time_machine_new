@@ -57,6 +57,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-table-rails (1.12.1)
     builder (3.2.3)
     byebug (9.1.0)
     capistrano (3.4.0)
@@ -265,6 +266,7 @@ GEM
     weui-rails (0.4.4)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    will_paginate (3.1.6)
 
 PLATFORMS
   java
@@ -275,6 +277,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.7)
+  bootstrap-table-rails
   bootswatch-rails!
   bundler
   byebug
@@ -302,6 +305,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webpacker
   weui-rails
+  will_paginate
 
 BUNDLED WITH
    1.16.1
