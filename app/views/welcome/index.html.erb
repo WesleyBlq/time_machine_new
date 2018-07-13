@@ -1,6 +1,15 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
-<%= react_component("HelloWorld", { greeting: "Hello", prerender: true },) %>
-<%= react_component("react_router/modal_gallery",  { location: "window.location", prerender: true },) %>
+<%#= react_component("HelloWorld", { greeting: "Hello", prerender: true },) %>
+<%#= react_component("react_router/modal_gallery",  { location: "window.location", prerender: true },) %>
 
-<%= react_component("todolist/index",  {  prerender: true },) %>
+<%#= react_component("todolist/index",  {  prerender: true },) %>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<%#= wechat_config_js debug: true, api: %w(hideMenuItems closeWindow) -%>
+<%# <script type="application/javascript">
+  wx.ready(function() {
+      wx.hideOptionMenu();
+  });
+</script> %>
+<%# <a href="javascript:wx.closeWindow();">Close</a> %>
+<%#= @user_info  %>

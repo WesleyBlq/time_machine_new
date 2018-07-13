@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
     
+	resource :wechat, only: [:show, :create]
 	namespace :m do
 		root 'welcome#index'
 		post 'rest_time' => 'welcome#rest_time'
+		resource :pay
 	end
 
 	namespace :wx do

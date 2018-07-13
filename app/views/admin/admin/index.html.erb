@@ -31,7 +31,10 @@
                 <% end %>
             </tbody>
         </table>
-        <%= will_paginate @tests %>
+        <div id="page_links">
+          <%= will_paginate @tests, :remote => true, renderer: BootstrapPagination::Rails %>
+        </div>
+        
     </div>
     <!-- /. PAGE INNER  -->
 </div>

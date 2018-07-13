@@ -12,15 +12,18 @@
     <% end %>
     
     <%= javascript_pack_tag 'application' %>
-    <%#= javascript_include_tag 'application' %>
-    <%#= stylesheet_pack_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
     <% if content_for? :template %>
-      <%= yield :template %>
+			<div class="container">
+				<%= yield %>    
+			</div>
     <% else %>
-      <%= yield %>
+			<%= yield %>
     <% end %>
   </body>
 </html>
+

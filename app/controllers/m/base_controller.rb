@@ -1,4 +1,4 @@
 class M::BaseController < ApplicationController
-    layout 'mobile'
+    layout 'react'
     
 end

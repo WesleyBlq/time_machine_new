@@ -19,9 +19,12 @@ gem "bootstrap-table-rails"
 gem 'bootswatch-rails', git: "git@github.com:ccokme/bootswatch-rails.git", branch: 'disable_google_font'
 
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 gem 'weui-rails'
+# gem 'wechat'
 gem "font-awesome-rails"
+gem 'wechat-gate'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

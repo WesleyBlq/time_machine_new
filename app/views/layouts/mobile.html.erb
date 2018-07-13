@@ -1,8 +1,26 @@
-<% content_for :template do %>
-    <div class="container">
-        <%= yield %>    
-    </div>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NewTimeMachine</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <% if content_for? :head_template %>
+      <%= yield :head_template %>
+    <% else %>
+      <%= stylesheet_link_tag    'application', media: 'all' %>
+    <% end %>
+    <%= javascript_include_tag 'application' %>
+  </head>
 
-<%= render file: 'layouts/application' %>
+  <body>
+    <% if content_for? :template %>
+			<div class="container">
+				<%= yield %>    
+			</div>
+    <% else %>
+			<%= yield %>
+    <% end %>
+  </body>
+</html>
 
