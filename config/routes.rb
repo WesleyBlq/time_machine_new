@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 	namespace :m do
 		root 'welcome#index'
 		post 'rest_time' => 'welcome#rest_time'
-		resource :pay
+		resources :pays, only: [:index] do
+			collection do
+        get 'charge'
+        get 'check'
+        get 'history'
+      end
+		end
 	end
 
 	namespace :wx do
