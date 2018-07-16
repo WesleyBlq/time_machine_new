@@ -27,6 +27,7 @@ set :linked_dirs, fetch(:linked_dirs, []).concat(%w[
   log
   tmp
   public/system
+  node_modules
 ])
 # set :rvm1_map_bins,   -> { fetch(:rvm_map_bins, %w{rake gem bundle ruby}) }
 set :pty, true
