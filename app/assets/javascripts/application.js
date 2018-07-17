@@ -16,9 +16,6 @@
 //= require bootstrap-table
 
 //= require welcome
-//= require jquery.metisMenu
-
-//= require custom-scripts
 
 
 
