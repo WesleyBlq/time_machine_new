@@ -9,7 +9,7 @@ set :unicorn_rack_env, 'production'
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server 'www.zhaoxnykj.com', user: 'root', roles: %w{web db}
+server 'www.zxxnykj.com', user: 'root', roles: %w{web db}
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
