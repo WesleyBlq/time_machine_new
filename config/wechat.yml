@@ -2,4 +2,3 @@ nanyang_recycle:
   app_id: "wx61e9579b9df71172"
   app_secret: "c4107a4da60089ca26d279a0c0004ac3"
   oauth2_redirect_uri: "http://www.zxxnykj.com/"
-  jfy_appkey: ""

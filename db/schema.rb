@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180703134830) do
+ActiveRecord::Schema.define(version: 20180719005016) do
+
+  create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "wechat_users_id"
+    t.float "price", limit: 24
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["wechat_users_id"], name: "index_bills_on_wechat_users_id"
+  end
 
   create_table "configs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "config_type"
@@ -53,6 +61,18 @@ ActiveRecord::Schema.define(version: 20180703134830) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["openid"], name: "index_wechat_sessions_on_openid", unique: true
+  end
+
+  create_table "wechat_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "openid"
+    t.string "nickname"
+    t.string "city"
+    t.string "province"
+    t.string "country"
+    t.string "headimgurl"
+    t.integer "sex"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

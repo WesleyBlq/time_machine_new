@@ -25,6 +25,8 @@ gem 'weui-rails'
 # gem 'wechat'
 gem "font-awesome-rails"
 gem 'wechat-gate'
+gem 'alipay', '~> 0.15.0'
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
