@@ -3,7 +3,8 @@
   <head>
     <title>NewTimeMachine</title>
     <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=drvice-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
     <% if content_for? :head_template %>
       <%= yield :head_template %>
     <% else %>
