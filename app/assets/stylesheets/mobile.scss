@@ -225,8 +225,23 @@ a:link { text-decoration: none; }
         }
       }
     }
+    
   }
+  .input_content {
+    padding: 10px 10px 10px 10px;
+    background-color: white;
+      textarea {
+        width: 100%;
+        border: #bbbbbb solid 1px;
+      }
+      .btn {
+        float: right;
+        margin-right: 10px;
+      }
+      
+    }
   .footer {
+
     height: 50px;
     background-color: #EFEFF4;
   }
