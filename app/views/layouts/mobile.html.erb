@@ -4,7 +4,7 @@
     <title>NewTimeMachine</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag 'weui-rails', media: 'all' %>
+    
     <% if content_for? :head_template %>
       <%= yield :head_template %>
     <% else %>
@@ -13,6 +13,14 @@
     
     
     <%= javascript_include_tag 'application' %>
+
+    <%= stylesheet_link_tag 'weui-rails', media: 'all' %>
+    <!-- head 中 -->
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+  
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+
   </head>
 
   <body>

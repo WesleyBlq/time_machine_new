@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 	namespace :m do
 		root 'welcome#index'
 		post 'rest_time' => 'welcome#rest_time'
+		get 'zs' => 'zs#index'
+		get 'zs/shop' => 'zs#shop'
 		resources :pays, only: [:index] do
 			collection do
         get 'charge'

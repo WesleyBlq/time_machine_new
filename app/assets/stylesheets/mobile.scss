@@ -2,8 +2,10 @@
 $gray_color: #1d9d74;
 
 .container {margin: 0px;padding: 0px;}
-
+a:link { text-decoration: none; } 
 .mobile_container {
+  background-color: #EFEFF4;
+
   .head {
     background-color: $gray_color;
     height: 150px;
@@ -21,6 +23,7 @@ $gray_color: #1d9d74;
       color: black;
     }
   }
+
   .session {
     background-color: #eeeeee;
     padding-left: 20px;
@@ -36,11 +39,186 @@ $gray_color: #1d9d74;
       font-size: 28px;
     }
   }
+  
   .footer {
     text-align: center;
     font-size: 10px;
     margin-top: 10px;
     color: #bbbbbb;
+  }
+}
+
+.zs_container {
+  .zs_head {
+    background-color: $gray_color;
+    height: 200px;
+    img {
+        height: 200px;
+        width: 100%;
+      }
+  }
+  .weui-panel {
+    .weui-panel__hd {
+      i {
+        font-size: 16px;
+      }
+      .star_show {
+        color: rgb(255, 234, 0)
+      }
+    }
+    
+    .box_bottom_left {
+      border-top:1px solid gray;
+      padding-left: 30px;
+    }
+    .head_show {
+      color: rgb(6, 180, 6);
+      font-size: 50px;
+    }
+  }
+
+  .shop_page {
+    background-color: white;
+    margin-top: 10px;
+    border-bottom:solid rgb(187, 183, 183) 1px;
+    a {
+      text-decoration:none;
+    }
+    .page_title {
+      padding: 5px;
+      font-size: 14px;
+      .star_show {
+        color: rgb(255, 234, 0)
+      }
+    }
+    .shop_content {
+      border-top:solid rgb(187, 183, 183) 1px;
+      margin: 0px 10px 0px 10px;
+      
+      .shop_detail {
+        border-bottom:solid rgb(187, 183, 183) 1px;
+        padding: 10px 0px 10px 0px;
+        .shop_img {
+          float: left;
+          padding: 10px;
+          i {
+            color: rgb(6, 180, 6);
+            font-size: 50px;
+          }
+        }
+      }
+      .shop_bottom {
+        text-align: center;
+        padding: 10px;
+        .shop_left {
+          // border-top:solid rgb(187, 183, 183) 1px;
+          border-right: solid rgb(187, 183, 183) 1px;
+        }
+        p {
+          margin: 0px;
+          color: blue;
+        }
+      }
+    }
+  }
+  
+}
+
+.shop_container {
+  background-color: #EFEFF4;
+  .shop_page {
+    background-color: white;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    // border-bottom:solid rgb(187, 183, 183) 1px;
+    .shop_content {
+      margin: 0px 10px 0px 10px;
+      .shop_detail {
+        // border-bottom:solid rgb(187, 183, 183) 1px;
+        padding: 10px 0px 10px 0px;
+        .shop_img {
+          float: left;
+          padding: 10px;
+          i {
+            color: rgb(6, 180, 6);
+            font-size: 50px;
+          }
+        }
+      }
+      
+    }
+    .dsp {
+      padding-top: 5px;
+      padding-left: 10px;
+      color: rgba(0, 0, 0, .65);
+      span {
+        float: left;
+      }
+      .progress_bar {
+        float: left;
+        width: 50%;
+        height: 10px;
+        
+        background-color:  #EFEFF4;
+        border-radius: 10px;
+        overflow: hidden;
+        .progress_bar_inner {
+          height: 10px;
+          border-radius: 10px;
+          width: 50%;
+          background-color: red;
+        }
+      }
+    }
+  }
+  .weui-cell__bd {
+    color: rgba(0, 0, 0, .65);
+    font-size: 16px;
+    img {
+      width: 100%;
+    }
+    .qrcode {
+      text-align: center;
+      img {
+        padding-top: 10px;
+        width: 50%;
+      }
+      
+    }
+  }
+  .weui-cell__ft {
+    img {
+      height: 20px;
+    }
+  }
+  .page__bd {
+    .roll_bottom {
+      float: right;
+      color: rgb(114, 114, 243);
+    }
+    .comments {
+      background-color: white;
+      
+      .avator {
+        text-align: center;
+        font-size: 35px;
+        width: 50px;
+        float: left;
+      }
+      .comment {
+        padding-top: 10px;
+        .message {
+          float: left;
+          .content {
+            color: rgba(0, 0, 0, .65);
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    height: 150px;
+    background-color: #EFEFF4;
   }
 }
 
