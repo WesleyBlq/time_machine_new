@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 				get 'success'
 				get 'error'
 				post 'recived_binding'
+				get 'dev_op'
       end
 		end
 	end
