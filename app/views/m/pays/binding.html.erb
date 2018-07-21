@@ -1,0 +1,36 @@
+<div class="mobile_container">
+  <div class="head ">
+    <div class="avatar">
+      <img src="<%#= @user_info.head_img_url %>">
+    </div>
+  </div>
+  <div class="session">
+    <span>服务</span>
+    <span class="notice">账号绑定，谨慎填写(*仅支持手机号码)</p>
+  </div>
+
+  <%= form_tag recived_binding_m_pays_path, method: :post do %>
+    <div class="weui-cell">
+      <div class="weui-cell__hd">
+        <label class="weui-label">支付宝账号</label>
+      </div>
+      <div class="weui-cell__bd">
+        <input name="phone" class="weui-input" pattern="[0-9]*" placeholder="请输入号码" type="number">
+      </div>
+    </div>
+    <div class="weui-cell">
+      <div class="weui-cell__hd">
+        <label class="weui-label">确认账号</label>
+      </div>
+      <div class="weui-cell__bd">
+        <input name="repeat_phone" class="weui-input" pattern="[0-9]*" placeholder="请输入号码" type="number">
+      </div>
+    </div>
+    <div class="weui-btn-area">
+      <%= submit_tag "提交", :class => "weui-btn weui-btn_primary" %>
+    </div>
+  <% end %>
+  <div class="footer">
+    <p>@Inner Wall</p>
+  </div>
+</div>

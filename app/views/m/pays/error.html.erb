@@ -1,0 +1,10 @@
+<div class="info_show">
+  <i class="fa fa-warning icon-error"></i>
+  <p class="content-success">
+    <% unless session[:bingding_error_message].blank? %>
+      <%= session[:bingding_error_message] %>
+      <% session[:bingding_error_message] = nil %>
+      <p>请返回重新输入</p>
+    <% end %>
+  </p>
+</div>

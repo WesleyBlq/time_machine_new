@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 			collection do
         get 'charge'
         get 'check'
-        get 'history'
+				get 'history'
+				get 'binding'
+				get 'success'
+				get 'error'
+				post 'recived_binding'
       end
 		end
 	end

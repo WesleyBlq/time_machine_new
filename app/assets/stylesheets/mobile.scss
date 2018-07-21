@@ -4,8 +4,8 @@ $gray_color: #1d9d74;
 .container {margin: 0px;padding: 0px;}
 a:link { text-decoration: none; } 
 .mobile_container {
-  background-color: #EFEFF4;
-
+  // background-color: #EFEFF4;
+  background-color: rgba(255, 255, 255, 0.6);
   .head {
     background-color: $gray_color;
     height: 150px;
@@ -23,7 +23,12 @@ a:link { text-decoration: none; }
       color: black;
     }
   }
-
+  .notice {
+    // text-align: right;
+    float: right;
+    font-size: 12px;
+    color: red;
+  }
   .session {
     background-color: #eeeeee;
     padding-left: 20px;
@@ -293,9 +298,28 @@ a:link { text-decoration: none; }
     }
   }
 }
-.blog_container {
-  padding: 20px 10px 20px 10px;
+// .blog_container {
+//   padding: 20px 10px 20px 10px;
+// }
+
+.info_show {
+  margin-top: 30px;
+  text-align: center;
 }
+
+.icon-success {
+  color: red;
+  font-size: 50px;
+}
+
+.icon-error {
+  font-size: 50px;
+}
+
+.content-success {
+  font-size: 40px;
+}
+
 
 
 
