@@ -1,5 +1,6 @@
-# source 'https://rubygems.org'
-source 'https://ruby.taobao.org'  
+source 'https://rubygems.org'
+# source 'https://ruby.taobao.org'  
+
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -18,11 +19,16 @@ gem "bootstrap-table-rails"
 # bootstrap themes: https://bootswatch.com/, we need to fork a new branch to disable google font.
 gem 'bootswatch-rails', git: "git@github.com:ccokme/bootswatch-rails.git", branch: 'disable_google_font'
 
+
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 gem 'weui-rails'
-# gem 'wechat'
+# gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+# gem "paperclip"
+gem "paperclip", "~> 6.0.0"
+gem 'sorcery'
+gem 'wechat'
 gem "font-awesome-rails"
 gem 'wechat-gate'
 gem 'alipay', '~> 0.15.0'
@@ -38,6 +44,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'react-rails'
 gem 'execjs'
+
+
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
