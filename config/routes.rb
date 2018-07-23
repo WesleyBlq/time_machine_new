@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 	namespace :m do
 		root 'welcome#index'
 		post 'rest_time' => 'welcome#rest_time'
+
 		get 'zs' => 'zs#index'
-		get 'zs/shop' => 'zs#shop'
+		get 'zs/new' => 'zs#new'
+		get 'zs/shop' => 'zs#shop'		
+		post 'zs/update_data' => 'zs#update_data'
+		
 		resources :pays, only: [:index] do
 			collection do
         get 'charge'

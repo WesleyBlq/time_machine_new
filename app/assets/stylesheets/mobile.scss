@@ -12,6 +12,24 @@ a:link { text-decoration: none; }
     text-align: center;
     color:#1AAD19;
   }
+  
+  .fileinput-button {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fileinput-button input {
+    margin: 0px;
+    opacity: 0;
+    font-size: 200px;
+    direction: ltr;
+    top: 0px;
+    position: absolute;
+    cursor: pointer;
+    right: 0px;
+  }
+
   .head {
     background-color: $gray_color;
     height: 150px;

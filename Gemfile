@@ -18,14 +18,10 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem "bootstrap-table-rails"
 # bootstrap themes: https://bootswatch.com/, we need to fork a new branch to disable google font.
 gem 'bootswatch-rails', git: "git@github.com:ccokme/bootswatch-rails.git", branch: 'disable_google_font'
-
-
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 gem 'weui-rails'
-# gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
-# gem "paperclip"
 gem "paperclip", "~> 6.0.0"
 gem 'sorcery'
 gem 'wechat'
@@ -37,6 +33,8 @@ gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery.fileupload-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -44,8 +42,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'react-rails'
 gem 'execjs'
-
-
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

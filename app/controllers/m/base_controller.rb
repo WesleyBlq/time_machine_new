@@ -1,6 +1,6 @@
 class M::BaseController < ApplicationController
     layout 'react'
-    before_action :wechat_login?
+    # before_action :wechat_login?
 
     private
     def wechat_login?

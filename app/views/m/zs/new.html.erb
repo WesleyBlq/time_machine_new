@@ -1,0 +1,45 @@
+<div class="mobile_container">
+  <div class="center">
+    <img id="uploadimg" />
+    <div class="btn btn-primary fileinput-button">
+      <span id="upload_btn">上传图片</span>
+      <input id="upload_images" name="photo" multiple="" type="file" data-url="<%= m_zs_update_data_path %>" 
+       accept="image/jpeg, image/png, image/jpg" />
+    </div>
+  </div>
+</div>
+<span id="upload_notice" class="hidden"></span>
+
+
+<% content_for :javascripts do -%>
+<script type="text/javascript">
+
+  $('#upload_images').fileupload({
+    dataType: 'json',
+    type: "post",
+    beforeSend: function () {
+      $('#upload_btn').html("上传中");
+    },
+    progressall: function (e, data) {
+      var progress = parseInt(data.loaded / data.total * 100, 10);
+      $('#upload_btn').html("上传中" + progress + "%");
+    },
+    done: function (e, data) {
+      if (data.result.status == "ok") {
+        $('#upload_btn').html("上传完成");
+        $("#upload_notice").html(data.result.message).removeClass("hidden");
+        $("#uploadimg").attr({ src: data.result.pic_url });
+        $("#uploadimg").css({ width: "400px", height: "400px" });
+        // location.reload();
+      }
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+      if (textStatus == "error") {
+        $('#upload_btn').html("上传失败");
+        $("#upload_notice").html(errorThrown).removeClass("hidden");
+      }
+    }
+  });
+
+</script>
+<% end %>
