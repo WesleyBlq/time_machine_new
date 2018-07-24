@@ -1,6 +1,7 @@
 class M::PaysController < M::BaseController
   layout 'mobile'
-
+  before_action :wechat_login?
+  
   def index
   end
 
