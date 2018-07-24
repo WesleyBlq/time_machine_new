@@ -304,6 +304,9 @@ GEM
     wechat-gate (0.1.6)
       activesupport (>= 5.0.1)
       rest-client (>= 1.8)
+    weui-rails (1.1.2.1)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     will_paginate (3.1.6)
     will_paginate-bootstrap (1.0.1)
       will_paginate (>= 3.0.3)
@@ -348,6 +351,7 @@ DEPENDENCIES
   webpacker
   wechat
   wechat-gate
+  weui-rails
   will_paginate
   will_paginate-bootstrap
 
