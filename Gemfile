@@ -21,7 +21,7 @@ gem 'bootswatch-rails', git: "git@github.com:ccokme/bootswatch-rails.git", branc
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
-gem 'weui-rails'
+# gem 'weui-rails'
 gem "paperclip", "~> 6.0.0"
 gem 'sorcery'
 gem 'wechat'

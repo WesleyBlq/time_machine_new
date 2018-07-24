@@ -10,13 +10,12 @@
     <% else %>
       <%= stylesheet_link_tag    'application', media: 'all' %>
     <% end %>
-    <%= stylesheet_link_tag 'weui-rails', media: 'all' %>
-    <!-- head 中 -->
-    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css"> -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <%#= stylesheet_link_tag 'weui-rails', media: 'all' %>
+    <%= stylesheet_link_tag 'jquery-weui.min', media: 'all' %>
+    
   </head>
 
-  <body>
+  <body ontouchstart>
     <% if content_for? :template %>
 			<div class="container">
 				<%= yield %>    
@@ -26,6 +25,7 @@
     <% end %>
     
     <%= javascript_include_tag 'application' %>
+    
     <%= yield :javascripts %>
   </body>
 </html>

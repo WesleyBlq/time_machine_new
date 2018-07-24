@@ -17,7 +17,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap-table
 //= require jquery.fileupload
-
 //= require welcome
 
 

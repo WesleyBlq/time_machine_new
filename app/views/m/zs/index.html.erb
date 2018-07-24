@@ -8,7 +8,7 @@
       </div>
       <label class="weui-search-bar__label" id="searchText">
         <i class="weui-icon-search"></i>
-        <span>搜索商户名称</span>
+        <span>搜索</span>
       </label>
     </form>
     <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
@@ -150,3 +150,7 @@
     </a>
   </div>
 </div>
+<% content_for :javascripts do -%>
+  <!-- 添加jquery-weui fileupload会失效！ -->
+  <%= javascript_include_tag 'jquery-weui.min' %>
+<% end %>
