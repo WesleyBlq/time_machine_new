@@ -31,4 +31,19 @@ p {
     }
   }
 
+  .demo_container {
+    .center {
+      text-align: center;
+      img {
+        width: 30%;
+      }
+    }
+    
+    .form-group {
+      margin-top: 20px;
+    }
+    .btn {
+      margin-top: 20px;
+    }
+  }
   

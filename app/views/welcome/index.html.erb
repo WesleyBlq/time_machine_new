@@ -1,16 +1,36 @@
-<div class="wrapper">
+<div class="demo_container">
+  <h3>目前仅供货该皮样纸</h3>
+  <div class="center">
+    <img src="<%= image_path "paper.jpg" %>" />
+  </div>
+  <form class="row">
+    <div class="form-group">
+      <label class="col-xs-2 ">数量</label>
+      <div class="col-xs-8">
+        <input type="num" class="form-control" value="1">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-10 center ">
+        <button type="submit" class="btn btn-default">购买</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<!-- <div class="wrapper">
   <p></p>
   <h1> 网站建设中, 敬请期待。。。测试版</h1>
   <h1><a href="<%= m_pays_path %>">demo</a></h1>
   <h1><a href="<%= m_root_path %>">入口</a></h1>
-</div>
-<%#= @user_info["openid"] %>
-<%= @user_info  %>
+</div> -->
 
-<h1>###</h1>
-<%= @response %>
-<h1>###</h1>
-<%= @result_order_id %>
+<%#= @user_info["openid"] %>
+<%#= @user_info  %>
+
+<%#= @response %>
+<%#= @result_order_id %>
 <%#= react_component("HelloWorld", { greeting: "Hello", prerender: true },) %>
 <%#= react_component("react_router/modal_gallery",  { location: "window.location", prerender: true },) %>
 <%#= react_component("todolist/index",  {  prerender: true },) %>

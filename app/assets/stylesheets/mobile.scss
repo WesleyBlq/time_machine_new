@@ -78,13 +78,36 @@ a:link { text-decoration: none; }
 }
 
 .zs_container {
+  .goods {
+    width: 50%;
+    text-align: center;
+    margin: 50px auto;
+  }
+    
+  .goods i {
+    animation: myfirst 1s infinite;
+    color: blue;
+    font-size: 36px;
+  }
+
+  @keyframes myfirst {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -10px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+  }
+
   .zs_head {
     background-color: $gray_color;
-    height: 200px;
+    position: relative;
     img {
-        height: 200px;
         width: 100%;
-      }
+    }
   }
   .weui-panel {
     .weui-panel__hd {

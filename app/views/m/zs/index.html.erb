@@ -14,8 +14,22 @@
     <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
   </div>
 
+  
+  
   <div class="zs_head">
-    <img src="<%= image_path "lg.png" %>">
+    <img src="<%= image_path %Q(use_map.jpeg) %>" usemap="#phly">
+    <map name="phly" class="row">
+      <div>
+        <area shape="circle" coords="180,139,14" href="venus.html" style="background-color: red" alt="Venus" />
+      </div>
+      <area shape="circle" coords="129,161,10" href="mercur.html" alt="Mercury" />
+      <area shape="rect" coords="0,0,110,260" href="sun.html" alt="Sun" />
+      <!-- <a ></a> -->
+      <div class="goods" style="display:block;position:absolute; left:50px;top:100px;filter:alpha(opacity=50);opacity:0.5">
+        <!-- <i class="fa fa-map-marker"></i> -->
+        <i class="fa fa-street-view"></i>
+      </div>
+    </map>
   </div>
   <div class="shop_page">
     <a href="<%= m_zs_shop_path %>">
