@@ -1,6 +1,6 @@
 class M::PaysController < M::BaseController
   layout 'mobile'
-  before_action :wechat_login?
+  # before_action :wechat_login?
   
   def index
   end
@@ -15,7 +15,7 @@ class M::PaysController < M::BaseController
   end
 
   def binding
-    @user_info = WechatUser.find_by(openid: session[:openid])
+    @user_info = WechatUser.current_user
   end
 
   def recived_binding 

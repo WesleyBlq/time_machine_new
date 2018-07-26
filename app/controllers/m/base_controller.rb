@@ -20,7 +20,7 @@ class M::BaseController < ApplicationController
         session[:openid] = user_info["openid"]
         
         if !WechatUser.exists?(openid: user_info["openid"])
-            user_info.delete_if {|key, value| key == "language" or key == "privilege"}
+            # user_info.delete_if {|key, value| key == "language" or key == "privilege"}
             WechatUser.create(user_info)
         end
     end

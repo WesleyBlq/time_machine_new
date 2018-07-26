@@ -1,0 +1,132 @@
+<div class="demo_container row">
+  <h3>目前仅供货该皮样纸</h3>
+  <div class="center">
+    <img src="<%= image_path "paper.jpg" %>" />
+  </div>
+  <form class="form">
+    <div class="form-group row">
+      <label class="col-xs-2 ">价钱</label>
+      <div class="col-xs-10 price">
+        ¥11.20
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-xs-2 ">数量</label>
+      <div class="col-xs-8">
+        <input type="num" class="form-control" value="1">
+        <button type="submit" class="btn btn-default">购买</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="shop_container">
+  <div class="shop_page">
+    <div class="shop_content">
+      <div class="row shop_detail">
+        <div class="shop_img">
+          <i class="fa fa-balance-scale"></i>
+        </div>
+        <div class=" shop_dsp">
+          <h4 class="weui-media-box__title">中商国际一号店</h4>
+          <p class="weui-media-box__desc">专营土豆、番茄等农副产品</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shop_page">
+    <div class="dsp">店铺好评率 98.87%</div>
+    <div class="dsp row">
+      <span>描述相符</span>
+      <div class="row progress_bar_block">
+        <div class="progress_bar">
+          <div class="progress_bar_inner" style="width: 95%"></div>
+        </div>
+      </div>
+      <div class="progress_dsp">4.8</div>
+    </div>
+    <div class="dsp row">
+      <span>服务态度</span>
+      <div class="row progress_bar_block">
+        <div class="progress_bar">
+          <div class="progress_bar_inner" style="width: 80%"></div>
+        </div>
+      </div>
+      <div class="progress_dsp">4.4</div>
+    </div>
+    <div class="dsp row">
+      <span>物流服务</span>
+      <div class="row progress_bar_block">
+        <div class="progress_bar">
+          <div class="progress_bar_inner" style="width: 90%"></div>
+        </div>
+      </div>
+      <div class="progress_dsp">4.6</div>
+    </div>
+  </div>
+  <div class="page__bd">
+    <div class="weui-cells__title">基础信息</div>
+    <div class="weui-cells">
+      <div class="weui-cell">
+        <div class="weui-cell__bd">
+          商铺法人
+        </div>
+        <div class="weui-cell__ft">张**</div>
+      </div>
+      <div class="weui-cell">
+        <div class="weui-cell__bd">
+          联系电话
+        </div>
+        <div class="weui-cell__ft">
+          <i class="fa fa-phone"></i>
+          1513666****
+        </div>
+      </div>
+      <div class="weui-cell">
+        <div class="weui-cell__bd">
+          店铺地址
+        </div>
+        <div class="weui-cell__ft">中商二号街43号</div>
+      </div>
+      <div class="weui-cell">
+        <div class="weui-cell__bd">
+          资质
+        </div>
+        <div class="weui-cell__ft">
+          <img src="<%= image_path "xb.jpg" %>" />
+          已签署消保协议
+        </div>
+      </div>
+      <div class="weui-cell">
+        <div class="weui-cell__bd">
+          商品介绍
+          <div class="qrcode">
+            本店羊皮纸都是卷起来发回，并且免费硬质管包装。有效避免运输中压坏外包装还加油层装，请亲放心购买。
+            <ul>
+              <li>该产品都是优质PVC料制作，透光性好，用途广泛。</li>
+              <li>适合羊皮纸灯罩、木雕花格柔光、吊灯、背景墙、屏风、门窗、过道。</li>
+              <li>可以阻燃（离开冥火不能点燃）、不褪色、透光性好.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"></div>
+</div>
+
+<!-- <div class="wrapper">
+  <p></p>
+  <h1> 网站建设中, 敬请期待。。。测试版</h1>
+  <h1><a href="<%= m_pays_path %>">demo</a></h1>
+  <h1><a href="<%= m_root_path %>">入口</a></h1>
+</div> -->
+
+<%#= @user_info["openid"] %>
+<%#= @user_info  %>
+
+<%#= @response %>
+<%#= @result_order_id %>
+<%#= react_component("HelloWorld", { greeting: "Hello", prerender: true },) %>
+<%#= react_component("react_router/modal_gallery",  { location: "window.location", prerender: true },) %>
+<%#= react_component("todolist/index",  {  prerender: true },) %>

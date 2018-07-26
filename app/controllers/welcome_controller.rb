@@ -3,37 +3,38 @@ class WelcomeController < ApplicationController
 	layout "mobile"
 	
 	def index
-		
-
 		# @result = RestClient.post(template_url, template_data(@user_info["openid"]))
-
-		# alipay
-		# @client = Alipay::Client.new(
-		# 	url: ENV['ALIPAY_API'],
-		# 	app_id: ENV['APP_ID'],
-		# 	app_private_key: ENV['APP_PRIVATE_KEY'],
-		# 	alipay_public_key: ENV['ALIPAY_PUBLIC_KEY'],
-		# 	sign_type: 'RSA',
-		# )
-
-		# @response = @client.execute(
-		# 	method: 'alipay.fund.trans.toaccount.transfer',
-		# 	biz_content: {
-		# 		# out_biz_no: rand(9999999).to_s,
-		# 		out_biz_no: "1",
-		# 		payee_type: 'ALIPAY_LOGONID',
-		# 		payee_account: 'wdaifr8692@sandbox.com',
-		# 		amount: '100'
-		# 	}.to_json(ascii_only: true)
-		# )
-		# => '{\"alipay_fund_trans_toaccount_transfer_response\":{\"code\"...'
-
-		# 取得转帐ID
-		# @result_order_id = JSON.parse(@response)["alipay_fund_trans_toaccount_transfer_response"]["order_id"]
-		#
+		# response = RestClient.get("http://66.42.101.234") 
+		# ali_pay_transfer_account amount: 0.1, payee_account: 15136662235
 	end
 
 	private
+	def ali_pay_transfer_account ops
+		# alipay
+		client = Alipay::Client.new(
+			url: ENV['ALIPAY_API'],
+			app_id: ENV['APP_ID'],
+			app_private_key: ENV['APP_PRIVATE_KEY'],
+			alipay_public_key: ENV['ALIPAY_PUBLIC_KEY'],
+		)
+
+		out_biz_no = Time.now.strftime("%Y%m%d%H%M%S%L") << (0..9).to_a.shuffle.join
+		response = client.execute(
+			method: 'alipay.fund.trans.toaccount.transfer',
+			biz_content: {
+				out_biz_no: out_biz_no,
+				payee_type: 'ALIPAY_LOGONID',
+				payee_account: ops[:payee_account].to_s,
+				amount: ops[:amount].to_s,
+			}.to_json(ascii_only: true)
+		)
+		# => '{\"alipay_fund_trans_toaccount_transfer_response\":{\"code\"...'
+		
+		# 取得转帐ID
+		ali_order_id = JSON.parse(response)["alipay_fund_trans_toaccount_transfer_response"]["order_id"]
+		{ :ali_order_id => ali_order_id, :out_biz_no => out_biz_no }
+	end
+
 	def template_url
 		'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' + wechat_gate_config.access_token
 	end
