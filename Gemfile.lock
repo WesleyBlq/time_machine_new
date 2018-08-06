@@ -52,10 +52,6 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (9.0.0)
       execjs
-    babel-source (5.8.35)
-    babel-transpiler (0.7.0)
-      babel-source (>= 4.0, < 6)
-      execjs (~> 2.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
     bootstrap-sass (3.3.7)
@@ -82,7 +78,6 @@ GEM
     climate_control (0.2.0)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
-    connection_pool (2.2.2)
     crass (1.0.4)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
@@ -195,8 +190,6 @@ GEM
       method_source (~> 0.9.0)
     public_suffix (3.0.2)
     rack (2.0.5)
-    rack-proxy (0.6.4)
-      rack
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rails (5.1.6)
@@ -227,12 +220,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    react-rails (2.4.6)
-      babel-transpiler (>= 0.7.0)
-      connection_pool
-      execjs
-      railties (>= 3.2)
-      tilt
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -289,10 +276,6 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webpacker (3.5.5)
-      activesupport (>= 4.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -338,7 +321,6 @@ DEPENDENCIES
   mysql2 (>= 0.3.18, < 0.5)
   paperclip (~> 6.0.0)
   rails (~> 5.1.4)
-  react-rails
   sass-rails (~> 5.0)
   sorcery
   spring
@@ -348,7 +330,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   unicorn
   web-console (>= 3.3.0)
-  webpacker
   wechat
   wechat-gate
   weui-rails

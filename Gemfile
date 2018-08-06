@@ -39,8 +39,8 @@ gem 'jquery.fileupload-rails'
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 
-gem 'webpacker'
-gem 'react-rails'
+# gem 'webpacker'
+# gem 'react-rails'
 gem 'execjs'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
