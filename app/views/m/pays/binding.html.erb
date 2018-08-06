@@ -9,7 +9,7 @@
     <span class="notice">账号绑定，谨慎填写(*仅支持手机号码)</p>
   </div>
 
-  <%= form_tag recived_binding_m_pays_path, method: :post do %>
+  <%= form_tag recived_binding_m_pays_path, method: :post, remote: true, id: "pay_form" do %>
     <div class="weui-cell">
       <div class="weui-cell__hd">
         <label class="weui-label">支付宝账号</label>
@@ -34,3 +34,31 @@
     <p>@Inner Wall</p>
   </div>
 </div>
+
+<% content_for :javascripts do %>
+  <!-- 添加jquery-weui fileupload会失效！ -->
+  <%= javascript_include_tag 'jquery-weui.min' %>
+  <script>
+    $(document).ready(function () {
+      $("#pay_form").on('ajax:success', function (event, data, status, xhr) {
+
+        if (event.detail[0]["status"] == "ok") {
+          message = event.detail[0]["message"]
+          $.toast("操作成功", "success");
+        }else {
+          message = event.detail[0]["message"]
+          $.toast(message, "text");
+        }
+        // use data to access to your json data structure
+      });
+
+      $("#pay_form").on('ajax:error', function (event, xhr, status, error) {
+        // console.log("sorry mate!");
+        // alert("error");
+        // alert("event");
+      });
+
+      // ....
+    })
+  </script>
+<% end %>

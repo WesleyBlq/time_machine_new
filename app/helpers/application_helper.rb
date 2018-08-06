@@ -12,3 +12,5 @@ module RemoteLinkPaginationHelper
         end
     end
 end
+
+
