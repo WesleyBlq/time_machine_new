@@ -12,7 +12,7 @@
     <% end %>
     <%= stylesheet_link_tag 'weui-rails', media: 'all' %>
     <%= stylesheet_link_tag 'jquery-weui.min', media: 'all' %>
-
+    <%= yield :stylesheets %>
   </head>
 
   <body ontouchstart>
@@ -25,8 +25,8 @@
     <% end %>
     
     <%= javascript_include_tag 'application' %>
-    
     <%= yield :javascripts %>
+
   </body>
 </html>
 

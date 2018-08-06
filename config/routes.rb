@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-    
+	
+	post 'api/account' => 'api#account'
+
 	resource :wechat, only: [:show, :create]
 	namespace :m do
 		root 'welcome#index'
