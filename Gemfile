@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-# source 'https://ruby.taobao.org'  
+# source 'https://rubygems.org'
+source 'https://ruby.taobao.org'  
 
 
 git_source(:github) do |repo_name|
@@ -23,7 +23,10 @@ gem 'will_paginate-bootstrap'
 
 gem 'weui-rails'
 gem "paperclip", "~> 6.0.0"
-gem 'sorcery'
+
+# gem 'sorcery'
+gem 'devise'
+
 gem 'wechat'
 gem "font-awesome-rails"
 gem 'wechat-gate'

@@ -1,7 +1,8 @@
 <div class="mobile_container">
   
   <div class="device_icon">
-    <h3>垃圾回收设备 编码2</h3>
+    <h3>垃圾回收设备
+    <small>状态:<%= @state %></small></h3>
     <i class="fa fa-download "></i>
   </div>
   <%= form_tag recived_binding_m_pays_path, method: :post do %>

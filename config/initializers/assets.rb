@@ -15,4 +15,8 @@ Rails.application.config.assets.precompile += %w(
   weui-rails.css
   jquery-weui.min.js
   jquery-weui.min.css
+
+  jquery.metisMenu.js
+  admin-scripts.js
+  admin-styles.css
   )

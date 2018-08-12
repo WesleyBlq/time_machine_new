@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	
+  devise_for :admins
 	post 'api/account' => 'api#account'
 
 	resource :wechat, only: [:show, :create]

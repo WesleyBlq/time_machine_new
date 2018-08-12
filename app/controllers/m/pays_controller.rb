@@ -1,7 +1,7 @@
 class M::PaysController < M::BaseController
 
   layout 'mobile'
-  before_action :wechat_login?
+  before_action :wechat_login? unless Rails.env == "development"
   
   def index
   end
@@ -46,6 +46,16 @@ class M::PaysController < M::BaseController
   end
 
   def dev_op
+    
+    case Config.device_state
+    when "idleend"
+      @state = "空闲状态"
+    when "openend"
+      @state = "开启中"
+    else "closeend"
+      @state = "使用中"
+    end
+    
   end
 
   def success
