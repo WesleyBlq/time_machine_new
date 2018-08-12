@@ -19,7 +19,7 @@ class Config < ActiveRecord::Base
   def self.close_device account
     instance = find_by(config_type: 'device_owner')
 
-    if instance.config_value == account
+    if instance.config_value.present? and instance.config_value  == account
       instance = find_by(config_type: 'device')
       instance.config_value = "closeend"
       instance.save
