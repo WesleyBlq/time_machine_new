@@ -18,7 +18,7 @@ class ApiController < ApplicationController
       Config.idle_device
       if current_user.alipay_acount.present?
   		  ali_pay_transfer_account amount: 0.1, payee_account: current_user.alipay_acount
-      
+      end
       render :plain => Config.device_state
     end
     # render :json => {state: "success", message: "params complete"}
