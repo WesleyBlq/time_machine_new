@@ -14,10 +14,15 @@ class ApiController < ApplicationController
 
     if params[:type] == "cost"
       content = params[:data]
+      price, weight = content.split(",")
+
+  		ali_pay_transfer_account amount: 0.1, payee_account: current_user.alipay_acount
+      
       render :plain => Config.device_state
     end
     # render :json => {state: "success", message: "params complete"}
   end
 
+  
   
 end

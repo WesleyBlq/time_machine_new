@@ -46,17 +46,19 @@ class M::PaysController < M::BaseController
   end
 
   def dev_op
-    
-    case Config.device_state
-    when "idleend"
-      @state = "空闲状态"
-    when "openend"
-      @state = "开启中"
-    else "closeend"
-      @state = "使用中"
-    end
-    
+    @device_state = Config.device_state
   end
+
+  def dev_ajax
+    case params[:op]
+    when "open"
+      Config.open_device
+    when "close"
+      Config.close_device
+    end
+    redirect_to dev_op_m_pays_path
+  end
+  
 
   def success
   end

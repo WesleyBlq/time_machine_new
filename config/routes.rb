@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 				get 'error'
 				post 'recived_binding'
 				get 'dev_op'
+				post 'dev_ajax'
       end
 		end
 	end

@@ -2,10 +2,17 @@
   
   <div class="device_icon">
     <h3>垃圾回收设备
-    <small>状态:<%= @state %></small></h3>
+    <small>状态:<%= show_device_state @device_state %></small></h3>
     <i class="fa fa-download "></i>
   </div>
-  <%= form_tag recived_binding_m_pays_path, method: :post do %>
-    <%= submit_tag "开启", :class => "weui-btn weui-btn_primary" %>
+  <%= form_tag dev_ajax_m_pays_path, method: :post do %>
+    <%= hidden_field_tag "op", show_device_op(@device_state) %>
+    <%= submit_tag  show_device_btn(@device_state), :class => "weui-btn weui-btn_primary" %>
   <% end %>
 </div>
+
+<% content_for :javascripts do -%>
+  <script type="text/javascript">
+
+  </script>
+<% end %>
