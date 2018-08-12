@@ -15,7 +15,7 @@ class ApiController < ApplicationController
     if params[:type] == "cost"
       content = params[:data]
       price, weight = content.split(",")
-
+      Config.idle_device
   		ali_pay_transfer_account amount: 0.1, payee_account: current_user.alipay_acount
       
       render :plain => Config.device_state
