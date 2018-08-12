@@ -38,9 +38,9 @@ class M::PaysController < M::BaseController
       # return redirect_to error_m_pays_path
     end  
 
-    # user = WechatUser.find_by(openid: session[:openid])
-    # user.alipay_acount = phone
-    # user.save!
+    user = WechatUser.find_by(openid: session[:openid])
+    user.alipay_acount = phone
+    user.save!
     render :json => { state: "ok", message: "保存成功"}
     # redirect_to success_m_pays_path  
   end
@@ -52,9 +52,9 @@ class M::PaysController < M::BaseController
   def dev_ajax
     case params[:op]
     when "open"
-      Config.open_device
+      Config::open_device current_user.alipay_acount
     when "close"
-      Config.close_device
+      Config::close_device current_user.alipay_acount
     end
     redirect_to dev_op_m_pays_path
   end
