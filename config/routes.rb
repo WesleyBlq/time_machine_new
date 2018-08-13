@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	
+
   devise_for :admins
 	post 'api/account' => 'api#account'
 
@@ -8,6 +9,9 @@ Rails.application.routes.draw do
 		root 'welcome#index'
 		post 'rest_time' => 'welcome#rest_time'
 
+		get 'other/service'
+
+		# 中山国际测试
 		get 'zs' => 'zs#index'
 		get 'zs/new' => 'zs#new'
 		get 'zs/shop' => 'zs#shop'		
