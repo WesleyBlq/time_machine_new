@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # 生成500条表格测试数据
-500.times do |i|
-    TestPayer.create(No: "#{i}", name: "payer_##{i}", description: "only using test.")
-end
+# 500.times do |i|
+#     TestPayer.create(No: "#{i}", name: "payer_##{i}", description: "only using test.")
+# end
+
+Device.create(:no => "20180001", :state => "idleend")

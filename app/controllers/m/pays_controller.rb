@@ -1,7 +1,9 @@
 class M::PaysController < M::BaseController
 
   layout 'mobile'
-  before_action :wechat_login? unless Rails.env == "development"
+  
+  before_action :wechat_login?
+  # before_action :wechat_login? unless Rails.env == "development"
   
   def index
   end
@@ -46,15 +48,15 @@ class M::PaysController < M::BaseController
   end
 
   def dev_op
-    @device_state = Config.device_state
+    @device_state = Device.device_state
   end
 
   def dev_ajax
     case params[:op]
     when "open"
-      Config::open_device current_user.alipay_acount
+      Device::open_device current_user.alipay_acount
     when "close"
-      Config::close_device current_user.alipay_acount
+      Device::close_device current_user.alipay_acount
     end
     redirect_to dev_op_m_pays_path
   end

@@ -7,7 +7,7 @@
   </div>
   <%= form_tag dev_ajax_m_pays_path, method: :post do %>
     <%= hidden_field_tag "op", show_device_op(@device_state) %>
-    <%= submit_tag  show_device_btn(@device_state), :class => "weui-btn weui-btn_primary" %>
+    <%= submit_tag show_device_btn(@device_state), :class => "weui-btn weui-btn_primary", :disabled => show_disabled(@device_state) %>
   <% end %>
 </div>
 

@@ -43,4 +43,7 @@ def show_device_op device_state
     end
 end
 
+def show_disabled device_state
+  device_state == "closeend" ? true : false
+end
 

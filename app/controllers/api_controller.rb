@@ -16,11 +16,11 @@ class ApiController < ApplicationController
       content = params[:data]
       price, weight = content.split(",")
       
-      if Config.device_owner.present?
-  		  ali_pay_transfer_account amount: 0.1, payee_account: Config.device_owner
+      if Device.owner.present?
+  		  ali_pay_transfer_account amount: 0.1, payee_account: Device.owner
       end
-      Config.idle_device
-      render :plain => Config.device_state
+      Device.idle_device
+      render :plain => Device.device_state
     end
     # render :json => {state: "success", message: "params complete"}
   end
