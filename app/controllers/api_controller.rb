@@ -9,7 +9,7 @@ class ApiController < ApplicationController
     # byebug
     
     if params[:type] == "query"
-      render :plain => Config.device_state
+      render :plain => Device.device_state
     end
 
     if params[:type] == "cost"

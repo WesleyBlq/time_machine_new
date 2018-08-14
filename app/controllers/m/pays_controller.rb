@@ -3,7 +3,7 @@ class M::PaysController < M::BaseController
   layout 'mobile'
   
   before_action :wechat_login?
-  # before_action :wechat_login? unless Rails.env == "development"
+# before_action :wechat_login? unless Rails.env == "development"
   
   def index
   end
