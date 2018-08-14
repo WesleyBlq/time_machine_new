@@ -1,7 +1,13 @@
 class Device < ActiveRecord::Base
 
   def self.device_state
-    find_by(no: '20180001').state
+    instance = find_by(no: '20180001')
+    if instance.state == "closeend" and Time.now > instance.updated_at + 5.minutes
+      instance.state = "idleend"
+      instance.save
+    end
+    
+    instance.state
   end
   
   def self.open_device account
