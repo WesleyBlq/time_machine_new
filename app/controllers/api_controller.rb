@@ -4,9 +4,7 @@ class ApiController < ApplicationController
   def account
     unless params[:type].present? and params[:data].present?
       return  render :json => {state: "error", message: "missing or wrong params"}
-      # return  render :plain => "state"
     end
-    # byebug
     
     if params[:type] == "query"
       render :plain => Device.device_state
@@ -16,8 +14,13 @@ class ApiController < ApplicationController
       content = params[:data]
       price, weight = content.split(",")
       
-      if Device.owner.present?
-  		  ali_pay_transfer_account amount: 0.1, payee_account: Device.owner
+      if Device.user.present?
+        
+        ali_pay_transfer_account amount: 0.1, payee_account: Device.user.alipay_acount
+        RestClient.post(template_url, template_data(:openid => Device.user.openid, 
+          :price => price,
+          :weight => weight))
+        
       end
       Device.idle_device
       render :plain => Device.device_state

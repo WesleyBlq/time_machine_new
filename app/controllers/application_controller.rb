@@ -32,4 +32,35 @@ class ApplicationController < ActionController::Base
 		ali_order_id = JSON.parse(response)["alipay_fund_trans_toaccount_transfer_response"]["order_id"]
 		{ :ali_order_id => ali_order_id, :out_biz_no => out_biz_no }
 	end
+
+	def template_url
+		'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' + wechat_gate_config.access_token
+	end
+
+	def template_data ops = {}
+		{
+			"touser": ops[:openid],
+			"template_id":"BxI4rwE_ZAgMFhRx7s0KCfeGGHh8NjkuKEmVv7tAkbs",
+			# "url": red_url,  
+			"data":{
+				"first": {
+					"value":"货品重量：" + ops[:weight] + " kg",
+					"color":"#173177"
+				},
+				"keyword1": {
+					# "value": rand(99).to_s + '.' + rand(99).to_s  + "元",
+					"value": ops[:price]  + "元",
+					"color":"#173177"
+				},
+				"keyword2": {
+					"value": Time.new.strftime("%Y年%m月%d日 %H时%M分"),
+					"color":"#173177"
+				},
+				"remark":{
+					"value":"注意查收所绑定的支付宝账号。",
+					"color":"#173177"
+				}
+			}
+		}.to_json
+	end
 end

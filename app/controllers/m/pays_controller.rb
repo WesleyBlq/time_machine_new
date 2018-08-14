@@ -54,9 +54,9 @@ class M::PaysController < M::BaseController
   def dev_ajax
     case params[:op]
     when "open"
-      Device::open_device current_user.alipay_acount
+      Device::open_device current_user
     when "close"
-      Device::close_device current_user.alipay_acount
+      Device::close_device current_user
     end
     redirect_to dev_op_m_pays_path
   end

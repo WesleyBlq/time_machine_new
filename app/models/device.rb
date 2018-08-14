@@ -1,4 +1,5 @@
 class Device < ActiveRecord::Base
+  belongs_to :user, optional: true, class_name: "WechatUser", foreign_key: "wechat_user_id"
 
   def self.device_state
     instance = find_by(no: '20180001')
@@ -6,21 +7,21 @@ class Device < ActiveRecord::Base
       instance.state = "idleend"
       instance.save
     end
-    
+
     instance.state
   end
   
-  def self.open_device account
+  def self.open_device user
     instance = find_by(no: '20180001')
     instance.state = "openend"
-    instance.owner = account
+    instance.user = user
     instance.save
   end
   
-  def self.close_device account
+  def self.close_device user
     instance = find_by(no: '20180001')
 
-    if instance.owner.present? and instance.owner == account
+    if instance.user.present? and instance.user == user
       instance.state = "closeend"
       instance.save
       return true 
@@ -31,12 +32,12 @@ class Device < ActiveRecord::Base
   def self.idle_device
     instance = find_by(no: '20180001')
     instance.state = "idleend"
-    instance.owner = ""
+    instance.user = nil
     instance.save
   end
 
-  def self.owner
-    find_by(no: '20180001').owner
+  def self.user
+    find_by(no: '20180001').user
   end
 
 end
