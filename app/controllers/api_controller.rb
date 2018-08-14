@@ -20,7 +20,7 @@ class ApiController < ApplicationController
         RestClient.post(template_url, template_data(:openid => Device.user.openid, 
           :price => price,
           :weight => weight))
-        
+          
       end
       Device.idle_device
       render :plain => Device.device_state
