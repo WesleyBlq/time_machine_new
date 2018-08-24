@@ -1,5 +1,5 @@
-# source 'https://rubygems.org'
-source 'https://ruby.taobao.org'  
+source 'https://rubygems.org'
+# source 'https://ruby.taobao.org'  
 
 
 git_source(:github) do |repo_name|
@@ -27,7 +27,7 @@ gem "paperclip", "~> 6.0.0"
 # gem 'sorcery'
 gem 'devise'
 
-gem 'wechat'
+# gem 'wechat'
 gem "font-awesome-rails"
 gem 'wechat-gate'
 gem 'alipay', '~> 0.15.0'
