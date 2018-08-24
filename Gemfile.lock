@@ -7,7 +7,7 @@ GIT
       railties (>= 3.1)
 
 GEM
-  remote: https://ruby.taobao.org/
+  remote: https://rubygems.org/
   specs:
     actioncable (5.1.6)
       actionpack (= 5.1.6)
