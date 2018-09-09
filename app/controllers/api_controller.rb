@@ -16,7 +16,7 @@ class ApiController < ApplicationController
       
       if Device.user.present?
         
-        ali_pay_transfer_account amount: 0.1, payee_account: Device.user.alipay_acount
+        ali_pay_transfer_account amount: price, payee_account: Device.user.alipay_acount
         RestClient.post(template_url, template_data(:openid => Device.user.openid, 
           :price => price,
           :weight => weight))

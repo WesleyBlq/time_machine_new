@@ -2,6 +2,6 @@ class Wx::WelcomeController < Wx::BaseController
 
 	def index
 		@test = "test"
-		byebug
+		# byebug
 	end
 end

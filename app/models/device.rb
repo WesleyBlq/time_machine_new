@@ -3,7 +3,7 @@ class Device < ActiveRecord::Base
 
   def self.device_state
     instance = find_by(no: '20180001')
-    if instance.state == "closeend" and Time.now > instance.updated_at + 5.minutes
+    if instance.state == "closeend" and Time.now > instance.updated_at + 1.minutes
       instance.state = "idleend"
       instance.save
     end
