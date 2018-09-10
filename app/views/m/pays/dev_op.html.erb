@@ -1,8 +1,8 @@
 <div class="mobile_container">
   
   <div class="device_icon">
-    <h3>垃圾回收设备
-    <small>状态:<%= show_device_state @device_state %></small></h3>
+    <h3>垃圾回收设备</h3>
+    <h3><small><%= show_device_state @device_state %></small></h3>
     <i class="fa fa-download "></i>
   </div>
   <%= form_tag dev_ajax_m_pays_path, method: :post do %>
@@ -13,6 +13,26 @@
 
 <% content_for :javascripts do -%>
   <script type="text/javascript">
+    (function () {
+      var ticket = document.createElement("script");
+      ticket.src = "http://www.zxxnykj.com/api/wechat_ticket/ticket.js?url=" + encodeURIComponent(window.location.href.split('#')[0]) + "&callback=wxCallback";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(ticket, s);
+    })();
 
+    // wx.config({
+    //   debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    //   appId: 'wx61e9579b9df71172', // 必填，公众号的唯一标识
+    //   timestamp: , // 必填，生成签名的时间戳
+    //   nonceStr: '', // 必填，生成签名的随机串
+    //   signature: '',// 必填，签名
+    //   jsApiList: [] // 必填，需要使用的JS接口列表
+    // });
+
+    // WeixinJSBridge.invoke('closeWindow', {}, function (res) {
+
+    //     alert(res.err_msg);
+
+    //   });
   </script>
 <% end %>

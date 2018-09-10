@@ -16,11 +16,11 @@ end
 def show_device_state device_state
     case device_state
     when "idleend"
-      "空闲"
+      "设备待机"
     when "openend"
-      "开启中"
+      "设备开始投放"
     else "closeend"
-      "使用中"
+      "设备关闭投放"
     end
 end
 

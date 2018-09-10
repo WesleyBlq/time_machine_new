@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :admins
 	post 'api/account' => 'api#account'
-
+	get 'api/ticket' => 'api#ticket'
+	
 	resource :wechat, only: [:show, :create]
 	namespace :m do
 		root 'welcome#index'
