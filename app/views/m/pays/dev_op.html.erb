@@ -15,7 +15,7 @@
   <script type="text/javascript">
     (function () {
       var ticket = document.createElement("script");
-      ticket.src = "http://www.zxxnykj.com/api/wechat_ticket/ticket.js?url=" + encodeURIComponent(window.location.href.split('#')[0]) + "&callback=wxCallback";
+      ticket.src = "http://www.zxxnykj.com/api/ticket.js?url=" + encodeURIComponent(window.location.href.split('#')[0]) + "&callback=wxCallback";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(ticket, s);
     })();
