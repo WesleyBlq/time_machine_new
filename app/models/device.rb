@@ -6,6 +6,7 @@ class Device < ActiveRecord::Base
     if instance.state == "closeend" and Time.now > instance.updated_at + 1.minutes
       instance.state = "idleend"
       instance.save
+    end
 
     if instance.state == "openend" and Time.now > instance.updated_at + 3.minutes
       instance.state = "idleend"
