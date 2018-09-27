@@ -18,7 +18,7 @@ def show_device_state device_state
     when "idleend"
       "设备待机"
     when "openend"
-      "设备开始投放"
+      "请投放"
     else "closeend"
       "设备关闭投放"
     end
@@ -28,9 +28,9 @@ def show_device_btn device_state
 
     case device_state
     when "closeend", "idleend"
-      "开启"
+      "开始投放"
     when "openend"
-      "关闭"
+      "完成投放"
     end
 end
 
