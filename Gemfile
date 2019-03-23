@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-# source 'https://ruby.taobao.org'  
+# source 'https://rubygems.org'
+source 'https://gems.ruby-china.com'  
 
 
 git_source(:github) do |repo_name|
@@ -11,7 +11,7 @@ gem 'bundler'
 # Sprockets is a Ruby library for compiling and serving web assets.
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.2'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'bootstrap-sass', '~> 3.3.7'
@@ -83,7 +83,8 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-rails', '1.1.3'
   gem 'capistrano3-unicorn' # https://github.com/tablexi/capistrano3-unicorn
-
+  gem 'ruby-debug-ide', '0.6.0'
+  gem 'debase'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
